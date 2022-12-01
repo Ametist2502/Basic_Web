@@ -1,0 +1,494 @@
+/* Reset CSS */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* 
+    1. Từ ngoài vào trong
+    2. Từ trên xuống dưới
+    3. Tổng quan đến chi tiết
+*/
+
+/* 
+    1. Vị trí
+    2. Kích thước
+    3. Màu sắc
+    4. Kiểu dáng (kiểu chữ, font chữ,....)
+*/
+
+/* public */
+
+.clear {
+    clear: both;
+}
+
+.text-white{
+    color: #fff !important;
+}
+
+.row {
+    margin-left: -8px;
+    margin-right: -8px;
+}
+
+.row::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.col {
+    float: left;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.third {
+    width: 33.333333%;
+}
+
+.second {
+    width: 50%;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.full {
+    width: 100%;
+}
+
+.mt-16 {
+    margin-top: 16px;
+}
+
+
+/* private */
+
+#header {
+    height: 46px;
+    background-color: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+#nav {
+    display: inline-block;
+}
+
+#nav, .subnav {
+    list-style-type: none;
+}
+
+#nav > li {
+    display: inline-block;
+    position: relative;
+}
+
+#nav li a {
+    line-height: 46px;
+    padding: 0 24px; 
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    display: inline-block;
+}
+
+#nav > li > a {
+    color: #fff;
+    display: block;
+    text-transform: uppercase;
+}
+
+#nav li:hover .subnav{
+    display: block;
+}
+
+#nav > li:hover > a,
+#nav .subnav li:hover a{
+    color: #333;
+    background-color: #ccc;
+}
+
+#nav .subnav a{
+    color: #000;
+    line-height: 38px;
+    display: block;
+    padding: 0 12px;
+}
+
+#nav .subnav {
+    display: none;
+    position: absolute;
+    top: auto;
+    min-width: 160px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#nav .navicon{
+    font-size: 14px;
+}
+
+#header .search {
+    float: right;
+    padding: 0 21px;
+}
+
+#header .search:hover {
+    background-color: #d85642;
+    cursor: pointer;
+}
+
+#header .search-icon{
+    font-size: 25px;
+    color: #fff;
+    line-height: 46px;
+}
+
+#slider {
+    background-color: #333;
+    margin-top: 46px;
+    padding-top: 50%;
+    background-image: url("../img/GearVN_Ghostblade_12.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+#slider .content-slider{
+    position: absolute;
+    color: #fff;
+    bottom: 47px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+#slider .text-description{
+    font-size: 20px;
+}
+
+#content .content-section{
+    width: 800px;
+    padding: 64px 16px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#content .content-heading{
+    font-size: 30px;
+    font-weight: 450;
+    text-align: center;
+    letter-spacing: 5px;
+}
+#content .content-sub-heading{
+    text-align: center;
+    font-size: 15px;
+    font-style: italic;
+    padding: 25px;
+    opacity: 0.6;
+}
+#content .text-content{
+    font-size: 15px;
+    text-align: justify;
+    line-height: 1.4;
+}
+
+#content .member {
+    margin-top: 47px;
+}
+
+#content .name-member{
+    font-size: 15px;
+}
+
+#content .image-member{
+    width: 153px;
+    margin-top: 15px;
+    border-radius: 5px;
+}
+
+#content .tour-section {
+    background-color: #000;
+}
+
+
+.order-ticket li{
+    color: #757575;
+    font-size: 15px;
+    padding: 11px 16px;
+    border-bottom: 1px solid #ddd;
+    list-style-type: none;
+    background-color: #fff;
+}
+
+.order-ticket .sold-out{
+    background-color: #f44336;
+    color: #fff;
+    padding: 3px 4px;
+    margin-left: 16px;
+}
+
+.order-ticket .quantity {
+    font-size: 15px;
+    width: 24px;
+    height: 24px;
+    float: right;
+    background-color: #000;
+    color: #fff;
+    border-radius: 50%;
+    line-height: 24px;
+    text-align: center;
+    margin-top: -3px;
+}
+
+.info-location {
+    margin-top: 32px;
+    margin-bottom: 48px;
+    background-color: #000;
+}
+
+.location{
+    padding: 0 8px;
+    color: #fff;
+    font-size: 15px;
+}
+
+#content .image-location:hover {
+    opacity: 0.6;
+}
+
+#content .image-location {
+    text-align: center;
+    width: 100%;
+    display: block;
+}
+
+.content-about-location {
+    background-color: #fff;
+    color: #000;
+    padding: 16px;
+}
+
+.title {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.date {
+    line-height: 4;
+    opacity: 0.6;
+    margin-top: 15px;
+}
+
+.text-description{
+    margin-top: 15px;
+    line-height: 1.4;
+}
+
+.buy-ticket-btn:hover{
+    background-color: #ccc;
+    color: #000;
+    cursor: pointer;
+}
+
+.buy-ticket-btn {
+    color: #fff;
+    background-color: #000;
+    padding: 11px 16px;
+    display: inline-block;
+    margin-top: 15px;
+    text-decoration: none;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+    align-items: center;
+    justify-content: center
+}
+
+.open {
+    display: flex;
+}
+
+.modal-container {
+    background: #fff;
+    width: 900px;
+    max-width: calc(100% - 32px);
+    min-height: 400px;
+    position: relative;
+    animation: modal-animation ease 0.6s;
+}
+.modal-header {
+    background-color: #009688;
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 30px;
+}
+
+.modal-icon-bag {
+    margin-right: 16px;
+}
+
+.modal-close-btn:hover{
+    color: #000;
+    background-color: #ccc;
+}
+
+.modal-close-btn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #fff;
+    padding: 14px;
+    cursor: pointer;
+}
+
+.modal-body {
+    padding: 16px;
+}
+
+.modal-label {
+    font-size: 15px;
+    display: block;
+    margin-bottom: 12px;
+}
+
+input#quantity {
+    border: 1px solid #ccc;
+    width: 100%;
+    font-size: 15px;
+    padding: 8px;
+    margin-bottom: 20px;
+}
+
+input#email {
+    border: 1px solid #ccc;
+    width: 100%;
+    font-size: 15px;
+    padding: 8px;
+    margin-bottom: 20px;
+}
+
+button#buy-id:hover {
+    background-color: #ccc;
+    color: #000;
+}
+
+button#buy-id {
+    background-color: #009688;
+    width: 100%;
+    color: #fff;
+    padding: 16px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    margin: 16px 0;
+    border: none;
+    text-transform: uppercase;
+}
+
+.modal-help {
+    float: right;
+    padding: 20px;
+}
+
+.modal-help a {
+    color: #2196F3;
+}
+
+@keyframes modal-animation {
+    from{
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+    
+    to{ 
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+/* contact form */
+.contact-content{
+    margin-top: 48px;
+}
+
+.contact-info {
+    font-size: 18px;
+    margin-bottom: 16px;
+    line-height: 1.5;
+}
+
+.contact-info i[class*="ti-"] {
+    width: 30px;
+    display: inline-block;
+}
+
+.contact-user {
+    font-size: 15px;
+}
+
+.contact-user .form-control {
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+input[type="submit"]:hover{
+    background-color: #ccc;
+    color: #000;
+}
+
+input[type="submit"] {
+    margin-top: 16px;
+    float: right;
+    text-transform: uppercase;
+    padding: 11px 17px;
+    border: none;
+    background-color: #000;
+    color: #fff;
+}
+
+.map-image {
+    width: 100%;
+}
+
+#footer {
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#footer > .social-media {
+    font-size: 24px;
+}
+
+.made-by {
+    font-size: 15px;
+    text-align: center;
+}
+
+.made-by a{
+   color: #2196F3;
+}
