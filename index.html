@@ -7,16 +7,18 @@
     <title>Ametist</title>
     <link rel="shortcut icon" href="https://freepngimg.com/download/cute/29920-1-cute-whale-transparent.png" type="image/x-icon">
     <link rel="stylesheet" href="./assets/CSS/main.css">
+    <link rel="stylesheet" href="./assets/CSS/responsive.css">
     <link rel="stylesheet" href="./assets/Font/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="./assets/CSS/bootstrap-3.4.1/dist/css/bootstrap.min.css">
 </head>
-<body>
+<body>   
     <!-- Header -->
     <div id="main">
         <div id="header">     
             <ul id="nav">
                 <li><a href="#">Home</a></li>
-                <li><a href="#the-band">Band</a></li>
-                <li><a href="#the-tour">Tour</a></li>
+                <li><a href="#band">Band</a></li>
+                <li><a href="#tour">Tour</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li>
                     <a href="#">
@@ -34,6 +36,10 @@
             <div class="search">
                 <i class="search-icon ti-search"></i>
             </div>
+
+            <div id="mobile-menu" class="menu">
+                <i class="menu-icon ti-menu"></i>
+            </div>
         </div>
 
         <div id="slider">
@@ -45,21 +51,21 @@
         <!-- Content -->
         <div id="content">
             <!-- About section -->
-            <div id="the-band" class="content-section">
+            <div id="band" class="content-section">
                 <div class="content-heading">THE BAND</div>
                 <div class="content-sub-heading">We love music</div>
                 <p class="text-content">We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
             
                 <div class="member">
-                    <div class="text-center col third">
+                    <div class="text-center col third member-mobile">
                         <p class="name-member">Name</p>
                         <img src="./assets/img/AVT/286066945_1789958557865049_7109522249276485203_n - Copy.jpg" alt="" class="image-member">
                     </div>
-                    <div class="text-center col third">
+                    <div class="text-center col third member-mobile">
                         <p class="name-member">Name</p>
                         <img src="./assets/img/AVT/286066945_1789958557865049_7109522249276485203_n - Copy.jpg" alt="" class="image-member">
                     </div>
-                    <div class="text-center col third">
+                    <div class="text-center col third member-mobile">
                         <p class="name-member">Name</p>
                         <img src="./assets/img/AVT/286066945_1789958557865049_7109522249276485203_n - Copy.jpg" alt="" class="image-member">
                     </div>
@@ -67,7 +73,7 @@
                 </div>
             </div>
             <!-- Tour section -->
-            <div id="the-tour" class="tour-section">
+            <div id="tour" class="tour-section">
                 <div class="content-section">
                     <div class="content-heading text-white">TOUR DATES</div>
                     <div class="content-sub-heading text-white">Remember to book your tickets!</div>
@@ -78,7 +84,7 @@
                         </ul>
                         
                         <div class="row info-location">
-                            <div class="col location third">
+                            <div class="col location third location-mobile">
                                     <img src="./assets/img/image_location/newyork.jpg" alt="" class="image-location">
                                     <div class="content-about-location">
                                         <h3 class="title">New York</h3>
@@ -87,7 +93,7 @@
                                         <button class="buy-ticket-btn js-buy-button">Buy Tickets</button>
                                     </div>
                             </div>
-                            <div class="col location third">
+                            <div class="col location third location-mobile">
                                     <img src="./assets/img/image_location/paris.jpg" alt="" class="image-location">
                                     <div class="content-about-location">
                                         <h3 class="title">New York</h3>
@@ -96,7 +102,7 @@
                                         <button class="buy-ticket-btn js-buy-button">Buy Tickets</button>
                                     </div>
                             </div>
-                            <div class="col location third">
+                            <div class="col location third location-mobile">
                                     <img src="./assets/img/image_location/sanfran.jpg" alt="" class="image-location">
                                     <div class="content-about-location">
                                         <h3 class="title">New York</h3>
@@ -203,6 +209,8 @@
         </div>
     </div>
 
+
+
     <script>
         const buyBtns = document.querySelectorAll('.js-buy-button')
         const modal = document.querySelector('.js-modal')
@@ -228,6 +236,37 @@
         modalContainer.addEventListener('click', function(event) {
             event.stopPropagation()
         })
+
+        //Open, Close menu on mobile
+        var header = document.getElementById('header')
+        var mobileMenu = document.getElementById('mobile-menu')
+        var headerHeight = header.clientHeight;
+
+        mobileMenu.onclick = function() {
+            var isClosed = header.clientHeight === headerHeight;
+            if(isClosed) {
+                header.style.height = 'auto';
+            } else {
+                header.style.height = null;
+            }
+        }
+
+
+        // Auto close when choose element in menu
+        var menuItems = document.querySelectorAll('#nav li a[href*="#"]')
+        for (var i = 0; i < menuItems.length; i++) {
+            var menuItem = menuItems[i];
+
+            menuItem.onclick = function(event) {
+                var isParentMenu = this.nextElementSibling && this.nextElementSibling.classList.contains('subnav');
+                if(isParentMenu) {
+                    event.preventDefault();
+                } else {
+                    header.style.height = null;
+                }
+            }
+        }
+
     </script>
 </body>
 </html>

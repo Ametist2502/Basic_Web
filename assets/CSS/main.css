@@ -141,9 +141,17 @@ html {
     font-size: 14px;
 }
 
+#header .menu-icon,
 #header .search {
     float: right;
     padding: 0 21px;
+}
+
+#header #mobile-menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
 }
 
 #header .search:hover {
@@ -151,6 +159,11 @@ html {
     cursor: pointer;
 }
 
+#header .menu:hover .menu-icon{
+    background-color: #ccc;
+    color: #000;
+}
+#header .menu-icon,
 #header .search-icon{
     font-size: 25px;
     color: #fff;
@@ -181,9 +194,10 @@ html {
 
 #content .content-section{
     width: 800px;
-    padding: 64px 16px;
+    padding: 64px 24px;
     margin-left: auto;
     margin-right: auto;
+    max-width: 100%;
 }
 
 #content .content-heading{
@@ -287,7 +301,7 @@ html {
 }
 
 .date {
-    line-height: 4;
+    line-height: 1.4;
     opacity: 0.6;
     margin-top: 15px;
 }
@@ -475,7 +489,7 @@ input[type="submit"] {
 }
 
 #footer {
-    height: 300px;
+    height: 225px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -493,3 +507,4 @@ input[type="submit"] {
 .made-by a{
    color: #2196F3;
 }
+ 
